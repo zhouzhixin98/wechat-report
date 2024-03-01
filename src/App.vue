@@ -18,7 +18,16 @@
       ></SeventhPage>
       <EighthPage class="delay box" v-if="step === 8" @next="next"></EighthPage>
       <NinthPage class="delay box" v-if="step === 9" @next="next"></NinthPage>
-      <div v-if="step !== 9" class="footer"></div>
+      <TenthPage class="delay box" v-if="step === 10" @next="next"></TenthPage>
+      <EleventhPage class="delay box" v-if="step === 11" @next="next"></EleventhPage>
+      <TwelfthPage class="delay box" v-if="step === 12" @next="next"></TwelfthPage>
+      <ThirteenthPage class="delay box" v-if="step === 13" @next="next"></ThirteenthPage>
+      <FourteenthPage class="delay box" v-if="step === 14" @next="next"></FourteenthPage>
+      <FifteenthPage class="delay box" v-if="step === 15" @next="next"></FifteenthPage>
+      <SixteenthPage class="delay box" v-if="step === 16" @next="next"></SixteenthPage>
+      <SeventeenthPage class="delay box" v-if="step === 17" @next="next"></SeventeenthPage>
+      <EighteenthPage class="delay box" v-if="step === 18" @next="next"></EighteenthPage>
+      <div v-if="step !== 18" class="footer"></div>
       <div :class="handleMask"></div>
     </template>
     <template v-else> 请用手机查看 </template>
@@ -35,6 +44,16 @@ import SixthPage from "./components/SixthPage";
 import SeventhPage from "./components/SeventhPage";
 import EighthPage from "./components/EighthPage";
 import NinthPage from "./components/NinthPage";
+import TenthPage from "./components/TenthPage";
+import EleventhPage from "./components/EleventhPage";
+import TwelfthPage from "./components/TwelfthPage";
+import ThirteenthPage from "./components/ThirteenthPage";
+import FourteenthPage from "./components/FourteenthPage";
+import FifteenthPage from "./components/FifteenthPage";
+import SixteenthPage from "./components/SixteenthPage";
+import SeventeenthPage from "./components/SeventeenthPage";
+import EighteenthPage from "./components/EighteenthPage";
+import backgroundMusic from '@/assets/music/background.mp3';
 export default {
   name: "App",
   components: {
@@ -47,12 +66,28 @@ export default {
     SeventhPage,
     EighthPage,
     NinthPage,
+    TenthPage,
+    EleventhPage,
+    TwelfthPage,
+    ThirteenthPage,
+    FourteenthPage,
+    FifteenthPage,
+    SixteenthPage,
+    SeventeenthPage,
+    EighteenthPage
   },
   data() {
     return {
       step: 1,
       mask: true,
+      audio: null,
     };
+  },
+  mounted() {
+    // 创建 Audio 对象
+    this.audio = new Audio(backgroundMusic);
+    // 在合适的时机播放音乐
+    this.playBackgroundMusic();
   },
   computed: {
     handleMask() {
@@ -79,11 +114,26 @@ export default {
   },
   methods: {
     next() {
-      if (this.step === 9) {
+      if (this.step === 18) {
         return;
       }
       this.step++;
     },
+    playBackgroundMusic() {
+      if (this.audio) {
+        this.audio.play();
+      }
+    },
+    stopBackgroundMusic() {
+      if (this.audio) {
+        this.audio.pause();
+        this.audio.currentTime = 0;
+      }
+    },
+  },
+  beforeDestroy() {
+    // 在组件销毁前停止音乐
+    this.stopBackgroundMusic();
   },
 };
 </script>

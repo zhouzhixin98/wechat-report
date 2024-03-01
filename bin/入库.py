@@ -1,24 +1,25 @@
 import pymysql
 import re
+from pymysql.converters import escape_string
 
 conn = pymysql.connect(
-    host='localhost',
+    host='175.178.201.158',
     user='root',
-    password='000000',
-    db='test',
+    password='aass2233',
+    db='jiughim',
     charset='utf8mb4',
     port=3306)
 
 cur = conn.cursor()
 
-with open(r"D:\临时文件\wechatLog\txt\你跺你也麻\林瓜瓜.txt", encoding='utf-8') as f:
+with open(r"D:\zzx\ltjl\究纪心\为爱失去穿衣自由的性感可人儿.txt", encoding='utf-8') as f:
     lines = f.readlines()
     filter_lines = []
-    reg = "^.+[\u4E00-\u9FFF]\s\(.+\):"
+    reg = "^.*\s\(.+\):"
 
     for line in lines:
         # 去除转发的聊天记录 简单过滤
-        if (line.startswith('你跺你也麻') or line.startswith('喇叭精')) and re.match(reg, line):
+        if (line.startswith('为爱失去穿衣自由的性感可人儿') or line.startswith('究纪心🐸')) and re.match(reg, line):
             filter_lines.append(line.strip())
 
 for line in filter_lines:
@@ -28,6 +29,6 @@ for line in filter_lines:
     time = line[s1 + 2:s2]
     content = line[s2 + 2:]
     print(line)
-    insert_sql = f"insert into log(user,datetime,content) values ('{name}','{time}' ,'{pymysql.escape_string(content)}')"
+    insert_sql = f"insert into log(user,datetime,content) values ('{name}','{time}' ,'{escape_string(content)}')"
     cur.execute(insert_sql)
 conn.commit()

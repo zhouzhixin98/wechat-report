@@ -10,7 +10,9 @@
       <span class="value"> {{ imgCount }} </span>
       是图片&nbsp; 其中有
       <span class="value"> {{ voiceCount }} </span>
-      是语音
+      是语音&nbsp; 还有甜甜蜜蜜的
+      <span class="value"> {{ voiceCount }} </span>
+      次语音/视频通话
     </div>
     <div class="c">
       <div v-for="(count, word, index) in loveWord" :key="index">
@@ -18,7 +20,7 @@
       </div>
       <div>...</div>
     </div>
-    <div class="d">比起网络<br />我们更喜欢在现实表达爱意</div>
+    <div class="d">但是其实，比起网络<br />我们更喜欢在现实表达爱意！</div>
   </div>
 </template>
 
