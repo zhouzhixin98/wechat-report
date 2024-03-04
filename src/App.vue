@@ -17,17 +17,19 @@
         @next="next"
       ></SeventhPage>
       <EighthPage class="delay box" v-if="step === 8" @next="next"></EighthPage>
-      <NinthPage class="delay box" v-if="step === 9" @next="next"></NinthPage>
-      <TenthPage class="delay box" v-if="step === 10" @next="next"></TenthPage>
-      <EleventhPage class="delay box" v-if="step === 11" @next="next"></EleventhPage>
-      <TwelfthPage class="delay box" v-if="step === 12" @next="next"></TwelfthPage>
-      <ThirteenthPage class="delay box" v-if="step === 13" @next="next"></ThirteenthPage>
-      <FourteenthPage class="delay box" v-if="step === 14" @next="next"></FourteenthPage>
-      <FifteenthPage class="delay box" v-if="step === 15" @next="next"></FifteenthPage>
-      <SixteenthPage class="delay box" v-if="step === 16" @next="next"></SixteenthPage>
-      <SeventeenthPage class="delay box" v-if="step === 17" @next="next"></SeventeenthPage>
-      <EighteenthPage class="delay box" v-if="step === 18" @next="next"></EighteenthPage>
-      <div v-if="step !== 18" class="footer"></div>
+      <Word2PicPage class="delay box" v-if="step === 9" @next="next"></Word2PicPage>
+      <NinthPage class="delay box" v-if="step === 10" @next="next"></NinthPage>
+      <TenthPage class="delay box" v-if="step === 11" @next="next"></TenthPage>
+      <EleventhPage class="delay box" v-if="step === 12" @next="next"></EleventhPage>
+      <TwelfthPage class="delay box" v-if="step === 13" @next="next"></TwelfthPage>
+      <ThirteenthPage class="delay box" v-if="step === 14" @next="next"></ThirteenthPage>
+      <FourteenthPage class="delay box" v-if="step === 15" @next="next"></FourteenthPage>
+      <FifteenthPage class="delay box" v-if="step === 16" @next="next"></FifteenthPage>
+      <SixteenthPage class="delay box" v-if="step === 17" @next="next"></SixteenthPage>
+      <SeventeenthPage class="delay box" v-if="step === 19" @next="next"></SeventeenthPage>
+      <ZhongjiangPage class="delay box" v-if="step === 18" @next="next"></ZhongjiangPage>
+      <EighteenthPage class="delay box" v-if="step === 20" @next="next"></EighteenthPage>
+      <div v-if="step !== 20" class="footer"></div>
       <div :class="handleMask"></div>
     </template>
     <template v-else> 请用手机查看 </template>
@@ -53,6 +55,8 @@ import FifteenthPage from "./components/FifteenthPage";
 import SixteenthPage from "./components/SixteenthPage";
 import SeventeenthPage from "./components/SeventeenthPage";
 import EighteenthPage from "./components/EighteenthPage";
+import Word2PicPage from "./components/Word2PicPage";
+import ZhongjiangPage from "./components/ZhongjiangPage";
 import backgroundMusic from '@/assets/music/background.mp3';
 export default {
   name: "App",
@@ -74,7 +78,9 @@ export default {
     FifteenthPage,
     SixteenthPage,
     SeventeenthPage,
-    EighteenthPage
+    EighteenthPage,
+    Word2PicPage,
+    ZhongjiangPage
   },
   data() {
     return {
@@ -114,7 +120,7 @@ export default {
   },
   methods: {
     next() {
-      if (this.step === 18) {
+      if (this.step === 20) {
         return;
       }
       this.step++;

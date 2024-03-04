@@ -11,6 +11,12 @@
     <div class="d">
       {{ time }}
     </div>
+    <div class="human">
+      <div class="boy">
+        <img class="a" src="@/assets/images/yt3.png" />
+        <img class="b" src="@/assets/images/cloud1.png" />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -60,5 +66,34 @@ export default {
   animation-duration: 1s;
   animation-delay: 1.5s;
   animation-fill-mode: backwards;
+}
+.human .boy {
+  position: relative;
+  top: -25vh;
+  animation: up-down 2s ease-in-out infinite both;
+}
+@keyframes up-down {
+  0% {
+    transform: translateY(1vh);
+  }
+  50% {
+    transform: translateY(0vh);
+  }
+  100% {
+    transform: translateY(1vh);
+  }
+}
+.human .boy .a {
+  width: 70vw;
+  position: relative;
+  left: -20vw;
+  top: -15vh;
+  z-index: 2;
+}
+.human .boy .b {
+  width: 60vw;
+  position: relative;
+  left: -5vw;
+  top: -30vh;
 }
 </style>

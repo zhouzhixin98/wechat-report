@@ -93,10 +93,10 @@ export default {};
   z-index: 2;
 }
 .human .girl .b {
-  width: 50vw;
+  width: 60vw;
   position: relative;
-  left: 5vw;
-  top: -5vh;
+  left: 10vw;
+  top: 10vh;
 }
 
 .star {

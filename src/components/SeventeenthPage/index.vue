@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="a">亲爱的懒懒懒，谢谢你为我驻足这么久</div>
+    <div class="a">宝宝，谢谢你带给我这么多</div>
     <div class="b">情人游天地，日月换行李</div>
     <div class="c">我永远爱你~</div>
   </div>

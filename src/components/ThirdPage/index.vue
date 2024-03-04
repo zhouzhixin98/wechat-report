@@ -21,6 +21,12 @@
       <div>...</div>
     </div>
     <div class="d">但是其实，比起网络<br />我们更喜欢在现实表达爱意！</div>
+    <div class="human">
+      <div class="boy">
+        <img class="a" src="@/assets/images/yt1.png" />
+        <img class="b" src="@/assets/images/cloud2.png" />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -64,5 +70,33 @@ export default {
   animation-delay: 2.5s;
   animation-fill-mode: backwards;
 }
-
+.human .boy {
+  position: relative;
+  top: -10vh;
+  animation: up-down 2s ease-in-out infinite both;
+}
+@keyframes up-down {
+  0% {
+    transform: translateY(1vh);
+  }
+  50% {
+    transform: translateY(0vh);
+  }
+  100% {
+    transform: translateY(1vh);
+  }
+}
+.human .boy .b {
+  width: 50vw;
+  position: relative;
+  left: 5vw;
+  top: -35vh;
+}
+.human .boy .a {
+  width: 40vw;
+  position: relative;
+  left: 50vw;
+  top: -40vh;
+  z-index: 2;
+}
 </style>

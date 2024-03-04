@@ -2,7 +2,7 @@
   <!-- <div class="test">又去看了薛之谦</div> -->
   <div class="box">
     <div class="title">
-      <div class="a">又去看了薛之谦</div>
+      <div class="a">你超级好手气抢到了薛之谦</div>
     </div>
     <div class="human">
       <div class="boy">
